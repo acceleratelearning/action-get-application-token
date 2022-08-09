@@ -56,4 +56,5 @@ function Get-GithubAppToken(
 
 $token = Get-GithubAppToken -GitHubAppId $GitHubAppId -GitHubAppKey $GitHubAppKey
 
+Write-Host "Token = $token"
 Write-Host "::set-output name=github-app-token::$token"
