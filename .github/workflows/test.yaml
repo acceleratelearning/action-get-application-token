@@ -15,6 +15,6 @@ jobs:
 
       - name: Test Token
         run: |
-          curl -H "Accept: application/vnd.github+json" -H "Authorization: token $INPUT_GITHUB_APP_TOKEN" https://api.github.com/repos/acceleratelearning/stemscopes-v4-lib-grpc-proto/zipball/ea2fdb194eeed6c3e7fdbbc1cb4246b11d805a99
+          curl -v -H "Accept: application/vnd.github+json" -H "Authorization: token $INPUT_GITHUB_APP_TOKEN" https://api.github.com/repos/acceleratelearning/stemscopes-v4-lib-grpc-proto/zipball/ea2fdb194eeed6c3e7fdbbc1cb4246b11d805a99
         env:
-          INPUT_GITHUB_APP_TOKEN: ${{ steps.get-application-token.outouts.github-app-token }}
+          INPUT_GITHUB_APP_TOKEN: ${{ steps.get-application-token.outputs.github-app-token }}
