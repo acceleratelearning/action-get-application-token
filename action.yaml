@@ -1,0 +1,18 @@
+name: Get GitHub Application token
+description: Gets a token from the GitHub application
+inputs:
+  github-app-id:
+    description: The title to be used for a container image label
+    required: true
+  github-app-key:
+    description: The PEM file contents for the GitHub App
+    required: true
+runs:
+  using: composite
+  steps:
+    - name: Get GitHub Application token
+      shell: pwsh
+      run: ${{ github.action_path }}/action.ps1
+      env:
+        INPUT_GITHUB_APP_ID: ${{ inputs.github-app-id }}
+        INPUT_GITHUB_APP_KEY: ${{ inputs.github-app-key }}
