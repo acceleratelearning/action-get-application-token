@@ -7,10 +7,15 @@ inputs:
   github-app-key:
     description: The PEM file contents for the GitHub App
     required: true
+outputs:
+  github-app-token:
+    description: The token generated from the GitHub application
+    value: ${{ steps.get-github-app-token.outputs.github-app-token }}    
 runs:
   using: composite
   steps:
     - name: Get GitHub Application token
+      id: get-github-app-token
       shell: pwsh
       run: ${{ github.action_path }}/action.ps1
       env:
