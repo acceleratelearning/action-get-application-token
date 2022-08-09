@@ -11,7 +11,7 @@ jobs:
         uses: acceleratelearning/action-get-application-token@v1
         with:
           github-app-id: ${{ secrets.COMPOSER_APP_ID }}
-          github-app-key: ${{ secrets.COMPOSER_APP_PEM }}
+          github-app-key: ${{ secrets.COMPOSER_APP_KEY }}
 
       - name: Test Token
         run: |
