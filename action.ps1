@@ -4,6 +4,9 @@ param (
     [String] $GitHubAppKey = $env:INPUT_GITHUB_APP_KEY
 )
 
+Install-Module -Name 'hugoalh.GitHubActionsToolkit' -AcceptLicense -Scope CurrentUser
+Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
+
 function Base64UrlEncodeBytes([Byte[]] $bytes) {
     [Convert]::ToBase64String($bytes) -replace '\+', '-' -replace '/', '_' -replace '='
 }
@@ -56,4 +59,4 @@ function Get-GithubAppToken(
 
 $token = Get-GithubAppToken -GitHubAppId $GitHubAppId -GitHubAppKey $GitHubAppKey
 
-Write-Host "::set-output name=github-app-token::$token"
+Set-GitHubActionsOutput "github-app-token" $token
