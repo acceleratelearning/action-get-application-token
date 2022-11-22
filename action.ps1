@@ -4,6 +4,7 @@ param (
     [String] $GitHubAppKey = $env:INPUT_GITHUB_APP_KEY
 )
 
+Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
 Install-Module -Name 'hugoalh.GitHubActionsToolkit' -AcceptLicense -Scope CurrentUser
 Import-Module -Name 'hugoalh.GitHubActionsToolkit' -Scope 'Local'
 
