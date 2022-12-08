@@ -1,17 +1,3 @@
-# action-get-application-token
-
-A github action that retrieves a github bearer token to authenticate as a github app.
-## Inputs
-
-| Name | Type | Required | Description |
-| ---- | ---- | -------- | ----------- |
-| github-app-id |  | :heavy_check_mark: | The title to be used for a container image label |
-| github-app-key |  | :heavy_check_mark: | The PEM file contents for the GitHub App |
-## Outputs
-
-| Name | Description | Value
-| ---- | ----------- | -----
-| github-app-token | The token generated from the GitHub application | ${{ steps.get-github-app-token.outputs.github-app-token }}
 # What's New
 
 Nothing to see here.
